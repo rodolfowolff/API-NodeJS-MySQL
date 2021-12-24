@@ -1,0 +1,5 @@
+node_modules/
+
+# dotenv environment variables for development
+.env
+.env.test
