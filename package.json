@@ -7,9 +7,10 @@
     "dev": "nodemon ./src/index.js",
     "sequelize": "npx sequelize-cli init",
     "dbcreate": "npx sequelize-cli db:create",
+    "dbdrop": "npx sequelize-cli db:drop",
     "migrate": "npx sequelize-cli db:migrate",
     "seed": "npx sequelize db:seed:all",
-    "model": "npx sequelize model:generate --name=Cliente --attributes=nome:string,cpf:string,email:string,cep:string,dataNacimiento:date",
+    "model": "npx sequelize model:generate --name=Cliente --attributes=nome:string,cpf:string,email:string,cep:string,dataNascimento:date",
     "lint": "eslint --no-inline-config --no-error-on-unmatched-pattern -c .eslintrc.json ."
   },
   "keywords": [],

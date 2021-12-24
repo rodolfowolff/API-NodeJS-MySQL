@@ -1,6 +1,6 @@
 require('dotenv').config();
 
-const options = {
+module.exports = {
   username: process.env.MYSQL_USER,
   password: process.env.MYSQL_PASSWORD,
   database: process.env.DB_NAME,
@@ -14,15 +14,13 @@ const options = {
         rejectUnauthorized: false,
       },
     } : {},
-  // define: {
-  //   timestamps: false,
-  // },
-  // pool: {
-  //   max: 5,
-  //   min: 0,
-  //   acquire: 30000,
-  //   idle: 10000,
-  // },
+  define: {
+    timestamps: false,
+  },
+  pool: {
+    max: 5,
+    min: 0,
+    acquire: 30000,
+    idle: 10000,
+  },
 };
-
-module.exports = options;

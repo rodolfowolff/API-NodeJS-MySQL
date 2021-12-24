@@ -20,7 +20,7 @@ module.exports = {
       cep: {
         type: Sequelize.STRING
       },
-      dataNacimiento: {
+      dataNascimento: {
         type: Sequelize.DATE
       },
       createdAt: {
