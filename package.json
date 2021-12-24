@@ -2,11 +2,9 @@
   "name": "api-nodejsmysql",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "type":"module",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js",
+    "start": "node ./src/index.js",
+    "dev": "nodemon ./src/index.js",
     "sequelize": "npx sequelize-cli init",
     "dbcreate": "npx sequelize-cli db:create",
     "migrate": "npx sequelize-cli db:migrate",
