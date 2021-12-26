@@ -2,8 +2,7 @@ const { validationResult } = require('express-validator');
 const ClienteService = require('../services/clientes.service');
 
 class Controller {
-  // eslint-disable-next-line class-methods-use-this
-  async register(req, res) {
+  register = async (req, res) => {
     const errors = validationResult(req);
 
     if (!errors.isEmpty()) {
@@ -12,17 +11,18 @@ class Controller {
 
     try {
       const { nome, cpf, email, cep, dataNascimento } = req.body;
-      // eslint-disable-next-line max-len
-      const clienteOk = await ClienteService.clienteRegister({ nome, cpf, email, cep, dataNascimento });
+      const clienteRegister = await ClienteService
+        .clienteRegister({ nome, cpf, email, cep, dataNascimento });
 
-      if (clienteOk) {
+      if (clienteRegister) {
         res.status(201).json({ message: 'Cliente cadastrado com sucesso!' });
+      } else {
+        res.status(400).json({ message: 'Cliente já cadastrado!' });
       }
-      res.status(200).json({ message: 'Erro, cpf já está em uso!' });
     } catch (error) {
       res.status(500).json({ error: error.message });
     }
-  }
+  };
 }
 
 const ClienteController = new Controller();

@@ -1,10 +1,8 @@
-/* eslint-disable no-unused-vars */
 const { Cliente } = require('../database/models');
 
 class Service {
-  // eslint-disable-next-line class-methods-use-this
-  async clienteRegister({ nome, cpf, email, cep, dataNascimento }) {
-    const [clienteOk] = await Cliente.findOrCreate({
+  clienteRegister = async ({ nome, cpf, email, cep, dataNascimento }) => {
+    const [clienteRegister] = await Cliente.findOrCreate({
       where: { cpf },
       defaults: {
         nome,
@@ -14,8 +12,8 @@ class Service {
       },
     });
 
-    return clienteOk;
-  }
+    return clienteRegister;
+  };
 }
 
 const ClienteService = new Service();
