@@ -3,5 +3,11 @@
   "extends": ["trybe-backend"],
   "rules": {
     "sonarjs/no-duplicate-string": ["error", 5]
+  },
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true
+    }
   }
 }
