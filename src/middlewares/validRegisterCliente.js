@@ -11,8 +11,8 @@ const validRegisterCliente = [
     .notEmpty()
     .withMessage('O cpf não pode ser vazio')
     .bail()
-    .isLength({ min: 8, max: 14 })
-    .withMessage('O número de caracterese do cpf deve estar entre 8 e 14'),
+    .isLength({ min: 11, max: 14 })
+    .withMessage('O número de caracterese do cpf deve estar entre 11 e 14'),
   check('email')
     .notEmpty()
     .withMessage('O email não pode ser vazio')
@@ -23,8 +23,8 @@ const validRegisterCliente = [
     .notEmpty()
     .withMessage('O cep não pode ser vazio')
     .bail()
-    .isLength({ min: 8, max: 14 })
-    .withMessage('O número de caracterese do cep deve estar entre 8 e 14'),
+    .isLength({ min: 8, max: 10 })
+    .withMessage('O número de caracterese do cep deve estar entre 8 e 10'),
   check('dataNascimento')
     .notEmpty()
     .withMessage('A data de nascimento não pode ser vazio')

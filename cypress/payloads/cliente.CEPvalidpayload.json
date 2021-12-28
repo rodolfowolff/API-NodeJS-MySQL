@@ -1,0 +1,16 @@
+[
+  {
+    "nome": "222",
+    "cpf": "213.999.212-22",
+    "email": "string@string.com",
+    "cep": "82.840-270",
+    "dataNascimento": "2014-01-01"
+  },
+  {
+    "nome": "222",
+    "cpf": "213.999.212-22",
+    "email": "string@string.com",
+    "cep": "82.840-2700",
+    "dataNascimento": "2014-01-01"
+  }
+]
