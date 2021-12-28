@@ -5,6 +5,23 @@ const regexReplace = require('../utils/regex');
 
 class Controller {
   getByCpf = async (req, res) => {
+    /*
+    #swagger.tags = [ "Clientes" ]
+    #swagger.description = "Endpoint para retornar dados de um cliente",
+    #swagger.parameters['getByCpf'] = {
+      in: 'body',
+      description: 'Informações para retornar dados do cliente',
+      required: true,
+      type: 'string',
+      schema: { $ref: '#/definitions/ClienteCpf'}
+      }
+    #swagger.responses[201] = {
+      description: 'Retorna dados do cliente com sucesso'
+    }
+    #swagger.responses[404] = {
+      description: 'Clinte não encontrado'
+    }
+    */
     const errors = validationResult(req);
 
     if (!errors.isEmpty()) {
@@ -23,6 +40,26 @@ class Controller {
   };
 
   register = async (req, res) => {
+    /*
+    #swagger.tags = [ "Clientes" ]
+    #swagger.description = "Endpoint para cadastro de cliente",
+    #swagger.parameters['Cadastro'] = {
+      in: 'body',
+      description: 'Informações para realização do cadastro',
+      required: true,
+      type: 'object',
+      schema: { $ref: '#/definitions/NovoCliente'}
+      }
+    #swagger.responses[200] = {
+      description: 'E-mail já possui cadastro no banco'
+    }
+    #swagger.responses[201] = {
+      description: 'Cadastro realizado com sucesso'
+    }
+    #swagger.responses[500] = {
+      description: 'Desculpe, tivemos um problema com a requisição'
+    }
+    */
     const errors = validationResult(req);
 
     if (!errors.isEmpty()) {

@@ -12,7 +12,8 @@
     "seed": "npx sequelize db:seed:all",
     "model": "npx sequelize model:generate --name=Cliente --attributes=nome:string,cpf:string,email:string,cep:string,dataNascimento:date",
     "lint": "eslint --no-inline-config --no-error-on-unmatched-pattern -c .eslintrc.json .",
-    "test": "npx cypress open"
+    "test": "npx cypress open",
+    "swagger": "node src/swagger.js"
   },
   "keywords": [],
   "author": "Rodolfo Wolff",
@@ -27,7 +28,9 @@
     "mysql2": "^2.3.3",
     "nodemailer": "^6.7.2",
     "sequelize": "^7.0.0-alpha.2",
-    "sequelize-cli": "^6.3.0"
+    "sequelize-cli": "^6.3.0",
+    "swagger-autogen": "^2.18.3",
+    "swagger-ui-express": "^4.3.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
