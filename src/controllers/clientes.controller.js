@@ -11,9 +11,7 @@ class Controller {
 
     try {
       const cpf = req.params;
-      console.log(cpf, 'o cpf');
       const result = await ClienteService.getByCpf(cpf);
-      console.log(result, 'result');
       res.status(201).json(result);
     } catch (error) {
       res.status(404).json({ error: 'Clinte não encontrado' });
