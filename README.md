@@ -42,6 +42,7 @@
       </ul>
     </li>
     </li>  
+    <li><a href="#test">Testes</a></li>
     <li><a href="#desenvolvedor">Desenvolvedor</a></li>
   </ol>
 </details>
@@ -143,6 +144,21 @@ A seguir estão as instruções para a instalação, configuração e uso da API
 
 No navegador, digitar <a href="localhost:3000/docs">localhost:3000/docs</a>. Se necessário, trocar 3000 pela porta configurada.
 
+
+<!-- TEST -->
+
+## :bug: Testes
+Os testes automatizados da aplicação foram desenvolvidos com o framework Cypress 
+
+1. Executar os testes
+
+```sh
+    npm run test
+```
+![cypress][cypress]
+
+<br>
+
 <!-- CONTACT -->
 
 ##  🐺 👨‍💻 Desenvolvedor
@@ -152,3 +168,4 @@ No navegador, digitar <a href="localhost:3000/docs">localhost:3000/docs</a>. Se 
 <!-- MARKDOWN LINKS & IMAGES -->
 
 [endpoints-cliente]: images/cliente.png
+[cypress]: images/testes.png
