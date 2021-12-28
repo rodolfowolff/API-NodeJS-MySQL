@@ -1,0 +1,109 @@
+{
+	"info": {
+		"_postman_id": "c07de264-0dd8-4296-832a-2e74a032c2b5",
+		"name": "APInodeJSMySQL",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "createCliente",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"nome\": \"222\",\n  \"cpf\": \"00001178149\",\n  \"email\": \"string@string.com\",\n  \"cep\": \"82840270\",\n  \"dataNascimento\": \"2014-01-01\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/cliente/cadastro",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"cliente",
+						"cadastro"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "emailSend",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTdhMjQ4Zjk4ZDI0YTM0MTkxODA3NTUiLCJlbWFpbCI6InRlc3RlQHRlc3RlLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNjM1Mzk4ODE0LCJleHAiOjE2MzU0MDA2MTR9.GHJy0bM3KfmSaCQHU4sQzNahOFmsHjBp-sBo5nu06UY",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"cpf\": \"31181178149\",\n  \"mensagem\": \"Mensagem teste\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/cliente/enviaremail",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"cliente",
+						"enviaremail"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getClienteByCpf",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/cliente/31181178149",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"cliente",
+						"31181178149"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
