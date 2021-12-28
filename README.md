@@ -91,7 +91,19 @@ A seguir estão as instruções para a instalação, configuração e uso da API
     npm install
 ```
 
-3. Rodar migrations
+3. Criar a db
+
+```sh
+    npm run dbcreate
+```
+
+-OU-
+
+```sh
+    npx sequelize-cli db:create
+```
+
+4. Rodar migrations
 
 ```sh
     npm run migrate
