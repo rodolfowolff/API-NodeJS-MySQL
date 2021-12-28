@@ -1,6 +1,7 @@
 const { validationResult } = require('express-validator');
 const ClienteService = require('../services/clientes.service');
 const validarCep = require('../utils/viaCep');
+const regexReplace = require('../utils/regex');
 
 class Controller {
   getByCpf = async (req, res) => {
@@ -11,8 +12,10 @@ class Controller {
     }
 
     try {
-      const cpf = req.params;
-      const result = await ClienteService.getByCpf(cpf);
+      const { cpf } = req.params;
+      const replaceCpf = regexReplace(cpf);
+
+      const result = await ClienteService.getByCpf({ cpf: replaceCpf });
       res.status(201).json(result);
     } catch (error) {
       res.status(404).json({ error: 'Clinte não encontrado' });
@@ -28,10 +31,13 @@ class Controller {
 
     try {
       const { nome, cpf, email, cep, dataNascimento } = req.body;
-      const { logradouro, bairro, localidade, uf } = await validarCep(cep);
+      const cepFormatado = regexReplace(cep);
+      const { logradouro, bairro, localidade, uf } = await validarCep(cepFormatado);
+
+      const replaceCpf = regexReplace(cpf);
 
       await ClienteService.clienteRegister({
-        nome, cpf, email, cep, logradouro, bairro, localidade, uf, dataNascimento,
+        nome, cpf: replaceCpf, email, cep: cepFormatado, logradouro, bairro, localidade, uf, dataNascimento,
       });
 
       res.status(201).json({ message: 'Cliente cadastrado com sucesso!' });
