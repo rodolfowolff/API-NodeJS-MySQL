@@ -145,7 +145,7 @@ No navegador, digitar <a href="localhost:3000/docs">localhost:3000/docs</a>. Se 
 
 <!-- CONTACT -->
 
-## :womens: Desenvolvedor
+## :men: Desenvolvedor
 
 - [Rodolfo Wolff](https://github.com/rodolfowolff)
 
