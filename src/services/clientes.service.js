@@ -14,6 +14,7 @@ class Service {
 
   clienteRegister = async ({
     nome, cpf, email, cep, logradouro, bairro, localidade, uf, dataNascimento }) => {
+
     const findByCpf = await Cliente.findOne({
       where: { cpf },
     });
