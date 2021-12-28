@@ -20,8 +20,9 @@ class Controller {
 
         res.status(201).json({ message: `Email enviado para ${result.email} com sucesso!` });
       }
+
     } catch (error) {
-      res.status(500).json({ error: 'Erro ao enviar email' });
+      res.status(404).json({ error: 'Erro ao enviar email, cpf informado não registrado' });
     }
   };
 }
