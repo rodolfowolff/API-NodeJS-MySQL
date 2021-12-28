@@ -1,5 +1,6 @@
 const { validationResult } = require('express-validator');
 const ClienteService = require('../services/clientes.service');
+const validarCep = require('../utils/viaCep');
 
 class Controller {
   getByCpf = async (req, res) => {
@@ -27,7 +28,12 @@ class Controller {
 
     try {
       const { nome, cpf, email, cep, dataNascimento } = req.body;
-      await ClienteService.clienteRegister({ nome, cpf, email, cep, dataNascimento });
+      const { logradouro, bairro, localidade, uf } = await validarCep(cep);
+
+      await ClienteService.clienteRegister({
+        nome, cpf, email, cep, logradouro, bairro, localidade, uf, dataNascimento,
+      });
+
       res.status(201).json({ message: 'Cliente cadastrado com sucesso!' });
     } catch (error) {
       res.status(500).json({ error: error.message });

@@ -23,8 +23,8 @@ const validRegisterCliente = [
     .notEmpty()
     .withMessage('O cep não pode ser vazio')
     .bail()
-    .isLength({ min: 8, max: 9 })
-    .withMessage('O número de caracterese do cep deve estar entre 8 e 9'),
+    .isLength({ min: 8, max: 14 })
+    .withMessage('O número de caracterese do cep deve estar entre 8 e 14'),
   check('dataNascimento')
     .notEmpty()
     .withMessage('A data de nascimento não pode ser vazio')

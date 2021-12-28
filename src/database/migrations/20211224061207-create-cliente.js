@@ -8,21 +8,15 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      nome: {
-        type: Sequelize.STRING
-      },
-      cpf: {
-        type: Sequelize.STRING
-      },
-      email: {
-        type: Sequelize.STRING
-      },
-      cep: {
-        type: Sequelize.STRING
-      },
-      dataNascimento: {
-        type: Sequelize.DATE
-      }
+      nome: { type: Sequelize.STRING },
+      cpf: { type: Sequelize.STRING },
+      email: { type: Sequelize.STRING },
+      cep: { type: Sequelize.STRING },
+      estado: { type: Sequelize.STRING },
+      cidade: { type: Sequelize.STRING },
+      bairro: { type: Sequelize.STRING },
+      logradouro: { type: Sequelize.STRING },
+      dataNascimento: { type: Sequelize.DATE }
     });
   },
   down: async (queryInterface, Sequelize) => {
